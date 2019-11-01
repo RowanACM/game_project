@@ -12,11 +12,15 @@ export default class PageContainer extends React.Component<Props> {
     constructor(props: Props) {
         super(props);
         this.name = props.name;
+        document.title = "React Game - " + this.name; // TODO: Store strings somewhere
     }
 
     render() {
         return (
-            <Header name={this.name}/>
+
+            <div>
+                {this.props.children}
+            </div>
         )
     }
 

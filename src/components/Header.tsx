@@ -1,5 +1,5 @@
 import React from "react";
-import {Navbar} from "react-bootstrap";
+import {Nav, Navbar} from "react-bootstrap";
 import NavbarText from "react-bootstrap/Navbar";
 
 interface Props {
@@ -21,8 +21,13 @@ export default class Header extends React.Component<Props> {
 
         return (
 
-            <Navbar bg={"dark"}>
-                <NavbarText>{this.name}</NavbarText>
+            <Navbar bg={"dark"} variant={"dark"}>
+                <Navbar.Brand href="#home">
+                    <h1>Home</h1>
+                </Navbar.Brand>
+                <Nav>
+                    <NavbarText>{this.name}</NavbarText>
+                </Nav>
             </Navbar>
 
         );
