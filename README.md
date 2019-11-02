@@ -1,44 +1,108 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rowan Full-Stack Game Project
 
-## Available Scripts
+This project is yet to be named.
 
-In the project directory, you can run:
+This repository contains all of the source code for the project. In order to run it, clone this repository using
+`git clone https://github.com/RowanACM/GameProject.git` and navigate into the directory. Next run `npm install` to
+install all of the dependencies. To start the server, run `npm run start`.
 
-### `npm start`
+All of the processing sketch files are to be placed in `src/p5/`. The file `wrapper.tsx` is what we use to put p5
+sketches into the React project, so don't touch it.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Using p5 in TypeScript
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This project uses [TypeScript](https://www.typescriptlang.org/), so if you're only familiar with vanilla JavaScript you
+might be a bit confused at first. Once you get the hang of it, it's not too difficult. Let's look at a p5 sketch in
+JavaScript and one in TypeScript.
 
-### `npm test`
+JavaScript:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```ecmascript 6
+let x = 100,
+  y = 100,
+  angle1 = 0.0,
+  segLength = 50;
 
-### `npm run build`
+function setup() {
+  createCanvas(710, 400);
+  strokeWeight(20.0);
+  stroke(255, 100);
+}
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+function draw() {
+  background(0);
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  let dx = mouseX - x;
+  let dy = mouseY - y;
+  angle1 = atan2(dy, dx);
+  x = mouseX - cos(angle1) * segLength;
+  y = mouseY - sin(angle1) * segLength;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  segment(x, y, angle1);
+  ellipse(x, y, 20, 20);
+}
 
-### `npm run eject`
+function segment(x, y, a) {
+  push();
+  translate(x, y);
+  rotate(a);
+  line(0, 0, segLength, 0);
+  pop();
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+TypeScript:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```typescript jsx
+import * as p5 from "p5";
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+export default function(p: p5) {
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    // no need to declare types for variables assigned to literals
+    let x = 100,
+        y = 100,
+        angle1 = 0.0,
+        segLength = 50;
 
-## Learn More
+    p.setup = function setup() {
+        p.createCanvas(710, 400);
+        p.strokeWeight(20.0);
+        p.stroke(255, 100);
+    };
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    p.draw = function draw() {
+        p.background(0);
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+        let dx = p.mouseX - x;
+        let dy = p.mouseY - y;
+        angle1 = p.atan2(dy, dx);
+        x = p.mouseX - p.cos(angle1) * segLength;
+        y = p.mouseY - p.sin(angle1) * segLength;
+
+        segment(x, y, angle1);
+        p.ellipse(x, y, 20, 20);
+    };
+
+    function segment(x: number, y: number, a: number) {
+        p.push();
+        p.translate(x, y);
+        p.rotate(a);
+        p.line(0, 0, segLength, 0);
+        p.pop();
+    }
+
+}
+```
+
+Essentially the difference between JavaScript and TypeScript is that TypeScript requires declaration of types like a
+strongly typed language such as Java. Types are defined as `let s: string`, which would declare a variable called `s`
+of type string. We can later initialize it like `s = "hello"`. If we were to try to assign a number to `s` such as
+`s = 7`, we would get an error because you can't assign a value of type `number` to a variable of type `string`.
+
+You can also say `let s: string = "hello"` to do it all in one step. Since in that example we're defining the variable
+immediately the type is implied so you might see `let s = "hello"` just like regular JavaScript.
+
+In addition, to reference any p5 variables or functions we must put `p.` in front of them. This is just a consequence
+of how the p5 wrapper works.
+
+Aside from that, writing p5 sketches in TypeScript really isn't all that different to writing them in JavaScript.
