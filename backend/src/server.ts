@@ -15,10 +15,11 @@ let n = 0;
 
 io.on("connection", (socket: Socket) => {
 
-    console.log(`new connection (${n++})`);
+    const c = n++;
+    console.log(`new connection ${c}`);
 
     socket.on("disconnect", () => {
-        console.log(`connection ${n} ended`);
+        console.log(`connection ${c} ended`);
     });
 
 });
