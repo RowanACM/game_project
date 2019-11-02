@@ -9,6 +9,11 @@ install all of the dependencies. To start the server, run `npm run start`.
 All of the processing sketch files are to be placed in `src/p5/`. The file `wrapper.tsx` is what we use to put p5
 sketches into the React project, so don't touch it.
 
+Everything should look approximately like this when it's all set up:
+
+
+<img src="https://i.imgur.com/qswVzoB.jpg">
+
 ## Using p5 in TypeScript
 
 This project uses [TypeScript](https://www.typescriptlang.org/), so if you're only familiar with vanilla JavaScript you
