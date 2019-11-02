@@ -22,8 +22,8 @@ export default function(p: p5) {
     p.draw = function draw() {
         p.background(0);
 
-        let dx = p.mouseX - x;
-        let dy = p.mouseY - y;
+        let dx: number = p.mouseX - x;
+        let dy: number = p.mouseY - y;
         angle1 = p.atan2(dy, dx);
         x = p.mouseX - p.cos(angle1) * segLength;
         y = p.mouseY - p.sin(angle1) * segLength;
