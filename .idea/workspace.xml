@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a6fe525-83b7-4a53-b006-3bcdddf79b37" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/breakpoints.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/p5/sketch.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/p5/wrapper.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Content.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homepage.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +31,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="b73d4f14-ef0f-4c46-a759-b2c3a8fbc30a" />
   </component>
   <component name="ProjectId" id="1T22U10xw7OqlCbn26hOjzum7Mx" />
   <component name="PropertiesComponent">
@@ -129,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572665774860</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Did p5 and bootstrap stuff">
+      <created>1572666979020</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572666979020</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +152,7 @@
     <MESSAGE value="React" />
     <MESSAGE value="Worked on homepage" />
     <MESSAGE value="Added bootstrap components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added bootstrap components" />
+    <MESSAGE value="Did p5 and bootstrap stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Did p5 and bootstrap stuff" />
   </component>
 </project>
