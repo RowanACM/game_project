@@ -70,7 +70,7 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 # dependencies
-/node_modules
+**/node_modules
 /.pnp
 .pnp.js
 
