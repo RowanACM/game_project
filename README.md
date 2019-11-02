@@ -103,6 +103,7 @@ You can also say `let s: string = "hello"` to do it all in one step. Since in th
 immediately the type is implied so you might see `let s = "hello"` just like regular JavaScript.
 
 In addition, to reference any p5 variables or functions we must put `p.` in front of them. This is just a consequence
-of how the p5 wrapper works.
+of how the p5 wrapper works. We also are defining the setup and draw functions a bit differently, but that again is
+just a consequence of the way the wrapper works.
 
 Aside from that, writing p5 sketches in TypeScript really isn't all that different to writing them in JavaScript.
