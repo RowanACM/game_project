@@ -20,7 +20,7 @@ export default class PageContainer extends React.Component<Props> {
         return (
             <div>
                 <Header active={this.name}/>
-                <Container>
+                <Container className={"mt-5"}>
                     {this.props.children}
                 </Container>
             </div>
