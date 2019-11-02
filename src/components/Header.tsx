@@ -1,19 +1,28 @@
 import React from "react";
-import {Nav, Navbar} from "react-bootstrap";
-import NavbarText from "react-bootstrap/Navbar";
+import {Collapse, Container, Nav, Navbar, NavbarBrand} from "react-bootstrap";
+import NavLink from "react-bootstrap/NavLink";
+import NavbarCollapse from "react-bootstrap/NavbarCollapse";
+import NavbarToggle from "react-bootstrap/NavbarToggle";
 
 interface Props {
-    name: string
+    active: string
 }
+
+const pages = [
+    "Play",
+    "Info",
+    "Contact",
+    "Help"
+];
 
 export default class Header extends React.Component<Props> {
 
-    private name: string;
+    private active: string;
 
     constructor(props: Props) {
         super(props);
 
-        this.name = props.name;
+        this.active = props.active;
 
     }
 
@@ -21,13 +30,22 @@ export default class Header extends React.Component<Props> {
 
         return (
 
-            <Navbar bg={"dark"} variant={"dark"}>
-                <Navbar.Brand href="#home">
-                    <h1>Home</h1>
-                </Navbar.Brand>
-                <Nav>
-                    <NavbarText>{this.name}</NavbarText>
-                </Nav>
+            <Navbar bg={"primary"} variant={"dark"} expand={"sm"}>
+                <Container>
+                    <NavbarBrand href="#home">
+                        Placeholder Name
+                    </NavbarBrand>
+                    <NavbarToggle/>
+                    <NavbarCollapse>
+                        <Nav className={"ml-auto"}>
+                            {
+                                pages.map(page => {
+                                    return <NavLink active={page === this.active}>{page}</NavLink>
+                                })
+                            }
+                        </Nav>
+                    </NavbarCollapse>
+                </Container>
             </Navbar>
 
         );

@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import {Container} from "react-bootstrap";
 
 interface Props {
     name : string
@@ -17,9 +18,11 @@ export default class PageContainer extends React.Component<Props> {
 
     render() {
         return (
-
             <div>
-                {this.props.children}
+                <Header active={this.name}/>
+                <Container>
+                    {this.props.children}
+                </Container>
             </div>
         )
     }
