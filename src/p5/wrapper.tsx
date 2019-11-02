@@ -9,12 +9,11 @@ export interface IProps {
 }
 
 export default class P5Wrapper extends React.Component<IProps, {}> {
-    public canvas: p5;
+    public canvas!: p5;
     private wrapper: React.RefObject<HTMLDivElement> = React.createRef();
 
     constructor(props: IProps) {
         super(props);
-        this.canvas = new p5(props.sketch);
     }
 
     public componentDidMount() {
