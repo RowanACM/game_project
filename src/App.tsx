@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './bootstrap/bootstrap.scss'
+import './breakpoints.scss'
 import Homepage from "./components/Homepage";
 
 const App: React.FC = () => {
