@@ -4,7 +4,8 @@ This project is yet to be named.
 
 This repository contains all of the source code for the project. In order to run it, clone this repository using
 `git clone https://github.com/RowanACM/GameProject.git` and navigate into the directory. Next run `npm install` to
-install all of the dependencies. To start the server, run `npm run start`.
+install all of the dependencies. To start the web server, run `npm run start`. To start the backend server, navigate
+into the `backend` directory and run `npm run start`.
 
 All of the processing sketch files are to be placed in `src/p5/`. The file `wrapper.tsx` is what we use to put p5
 sketches into the React project, so don't touch it.
