@@ -2,7 +2,7 @@ import * as p5 from "p5";
 
 /*
 Because of how this wrapper works, all calls to p5 functions or variables must be called from "p".
-Also, the resolution specified here will only affect the internal resolution; it will be rendered at a different
+Also, the canvas size specified here will only affect the internal resolution; it will be rendered at a different
 responsive resolution for the client.
  */
 export default function(p: p5) {
