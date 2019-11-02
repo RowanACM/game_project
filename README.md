@@ -15,6 +15,8 @@ Everything should look approximately like this when it's all set up:
 
 <img src="https://i.imgur.com/qswVzoB.jpg">
 
+That black window is where our p5 sketches will be run.
+
 ## Using p5 in TypeScript
 
 This project uses [TypeScript](https://www.typescriptlang.org/), so if you're only familiar with vanilla JavaScript you
