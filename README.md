@@ -17,7 +17,7 @@ JavaScript and one in TypeScript.
 
 JavaScript:
 
-```ecmascript 6
+```javascript
 let x = 100,
   y = 100,
   angle1 = 0.0,
