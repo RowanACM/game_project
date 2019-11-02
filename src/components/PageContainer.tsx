@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import Footer from "./Footer";
 import {Container} from "react-bootstrap";
 
 interface Props {
@@ -18,11 +19,12 @@ export default class PageContainer extends React.Component<Props> {
 
     render() {
         return (
-            <div>
+            <div id={"pageContainer"}>
                 <Header active={this.name}/>
-                <Container className={"mt-5"}>
+                <Container className={"mt-5 px-5"}>
                     {this.props.children}
                 </Container>
+                <Footer/>
             </div>
         )
     }

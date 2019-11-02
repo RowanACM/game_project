@@ -1,7 +1,12 @@
 .App {
   text-align: center;
   background-color: #85e7ff;
-  min-height: 100vh;
+}
+
+#pageContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-link {
@@ -18,4 +23,9 @@
 canvas {
   width: 100% !important;
   height: auto !important;
+}
+
+.footer {
+  background-color: #78d7ee;
+  color: #cdf5ff;
 }
