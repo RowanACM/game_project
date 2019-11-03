@@ -8,7 +8,7 @@ const http = require("http");
 const socketIO = require("socket.io");
 
 const app: Express = express();
-const server: Server = http.createServer(app);
+const server = http.createServer(app);
 const io = socketIO(server);
 
 let n = 0;
@@ -24,4 +24,6 @@ io.on("connection", (socket: Socket) => {
 
 });
 
-server.listen(port);
+server.listen(port, () => {
+    console.log(`Listening on port ${port}`)
+});
