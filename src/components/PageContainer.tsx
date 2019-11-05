@@ -21,7 +21,7 @@ export default class PageContainer extends React.Component<Props> {
         return (
             <div id={"pageContainer"}>
                 <Header active={this.name}/>
-                <Container className={"mt-5 px-5"}>
+                <Container className={"mt-5 px-5 mb-1"}>
                     {this.props.children}
                 </Container>
                 <Footer/>
