@@ -1,0 +1,33 @@
+{
+  "name": "gameproject",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@types/p5": "^0.9.0",
+    "@types/socket.io-client": "^1.4.32",
+    "@zeit/next-css": "^1.0.1",
+    "bootstrap": "^4.3.1",
+    "next": "9.1.2",
+    "next-nprogress": "^1.4.0",
+    "next-progressbar": "^1.0.0",
+    "react": "16.11.0",
+    "react-bootstrap": "^1.0.0-beta.14",
+    "react-dom": "16.11.0",
+    "react-no-ssr": "^1.1.0",
+    "react-p5": "^1.1.1",
+    "reactstrap": "^8.1.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.6",
+    "@types/react": "^16.9.11",
+    "prettier": "^1.18.2",
+    "typescript": "^3.7.2"
+  }
+}
