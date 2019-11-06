@@ -3,7 +3,7 @@
 This project is yet to be named.
 
 This repository contains all of the source code for the project. In order to run it, clone this repository using
-`git clone https://github.com/RowanACM/GameProject.git` and navigate into the directory. Next run `npm install` to
+`git clone https://github.com/RowanACM/game_project.git` and navigate into the directory. Next run `npm install` to
 install all of the dependencies. To start the web server, run `npm run start`. To start the backend server, navigate
 into the `backend` directory and again run `npm install` to get all of the depencies and then run `npm run start`.
 
