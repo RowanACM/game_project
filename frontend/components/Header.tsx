@@ -15,7 +15,6 @@ export default class Header extends React.Component<Props> {
 
   constructor(props: Props) {
     super(props);
-
     this.active = props.active;
   }
 

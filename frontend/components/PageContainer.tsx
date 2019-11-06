@@ -28,6 +28,11 @@ export default class PageContainer extends React.Component<Props> {
           html {
             background: #85e7ff;
           }
+          #pageContainer {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+          }
           canvas {
             width: 100% !important;
             height: auto !important;
