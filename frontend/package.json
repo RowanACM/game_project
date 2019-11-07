@@ -5,12 +5,22 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest",
+    "test:changed": "jest --onlyChanged",
+    "test:changed:watch": "jest --watch --onlyChanged",
+    "test:changed:coverage": "jest --coverage --onlyChanged",
+    "test:changed:coverage:watch": "jest --coverage --onlyChanged --watch",
+    "test:watch": "jest --watch",
+    "test:watch:verbose": "jest --watch --verbose=true",
+    "test:coverage": "jest --coverage",
+    "test:coveralls": "cat coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "dependencies": {
     "@types/p5": "^0.9.0",
     "@types/socket.io-client": "^1.4.32",
     "@zeit/next-css": "^1.0.1",
+    "babel-plugin-jsx-remove-data-test-id": "^2.0.1",
     "bootstrap": "^4.3.1",
     "next": "9.1.2",
     "next-nprogress": "^1.4.0",
@@ -25,9 +35,16 @@
     "socket.io-client": "^2.3.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.3",
+    "@testing-library/react": "^9.3.2",
+    "@types/jest": "^24.0.22",
     "@types/node": "^12.12.6",
     "@types/react": "^16.9.11",
+    "babel-jest": "^24.9.0",
+    "babel-preset-minify": "^0.5.1",
+    "jest": "^24.9.0",
     "prettier": "^1.18.2",
+    "react-test-renderer": "^16.11.0",
     "typescript": "^3.7.2"
   }
 }

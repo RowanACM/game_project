@@ -40,7 +40,9 @@ export default class PageContainer extends React.Component<Props> {
         `}</style>
         <div id={'pageContainer'}>
           <Header active={this.name} />
-          <Container className={'mt-5 px-5 mb-1'}>{this.props.children}</Container>
+          <Container data-testid={'container'} className={'mt-5 px-5 mb-1'}>
+            {this.props.children}
+          </Container>
           <Footer />
         </div>
       </div>
