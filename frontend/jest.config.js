@@ -5,9 +5,11 @@ module.exports = {
   transform: {
     "^.+\\.[t|j]sx?$": "babel-jest"
   },
-  globals: {
-    "ts-jest": {
-      tsConfig: "tsconfig.jest.json"
-    }
-  }
+  // setupTestFrameworkScriptFile: "<rootDir>/test/setup.js",
+  coverageReporters: [
+    "json",
+    "lcov",
+    "text",
+    "text-summary"
+  ],
 };

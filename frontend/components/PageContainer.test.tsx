@@ -1,18 +1,13 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import Enzyme from 'enzyme';
 import PageContainer from './PageContainer';
 
-afterEach(cleanup);
-
 it('renders child', async () => {
-  const wrapper = render(
+  const wrapper = Enzyme.shallow(
     <PageContainer name={'foo'}>
       <p>bar</p>
     </PageContainer>,
   );
-  const container = await wrapper.findByTestId('container');
-  expect(container.children.length).toEqual(1);
-  const child = container.firstChild;
-  expect(child).toHaveTextContent('bar');
+  const container = wrapper.find('Container');
+  expect(container.text()).toContain('bar');
 });

@@ -25,7 +25,7 @@ export default class Header extends React.Component<Props> {
           <NavbarBrand href="#home">Placeholder Name</NavbarBrand>
           <NavbarToggle />
           <NavbarCollapse>
-            <Nav className={'ml-auto'}>
+            <Nav data-testid={'nav'} className={'ml-auto'}>
               {pages.map((page, idx) => {
                 return (
                   <NavLink key={idx} active={page === this.active}>
