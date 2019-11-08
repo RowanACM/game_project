@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Container } from 'react-bootstrap';
 import Header from './Header';
 import Footer from './Footer';
+import '../styles/breakpoints.scss';
 
 interface Props {
   name: string;
