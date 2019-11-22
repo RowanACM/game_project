@@ -3,13 +3,10 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   setupFilesAfterEnv: ['./jest.setup.js'],
   transform: {
-    "^.+\\.[t|j]sx?$": "babel-jest"
+    '^.+\\.[t|j]sx?$': 'babel-jest',
   },
-  // setupTestFrameworkScriptFile: "<rootDir>/test/setup.js",
-  coverageReporters: [
-    "json",
-    "lcov",
-    "text",
-    "text-summary"
-  ],
+  moduleNameMapper: {
+    '\\.(css|less|sass|scss)$': '<rootDir>/__mocks__/emptyModule.js',
+  },
+  coverageReporters: ['json', 'lcov', 'text', 'text-summary'],
 };
