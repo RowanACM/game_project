@@ -1,15 +1,38 @@
 {
+  "name": "gameproject-server",
+  "version": "0.0.1",
+  "private": true,
   "dependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/express": "^4.17.2",
-    "@types/node": "^12.12.5",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.12",
     "@types/socket.io": "^2.1.4",
+    "bcrypt": "^3.0.7",
     "express": "^4.17.1",
+    "reflect-metadata": "^0.1.13",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
+    "sqlite3": "^4.1.0",
+    "typeorm": "^0.2.20",
     "typescript": "^3.6.4"
   },
   "scripts": {
+    "format": "prettier --write \"src/**/*.*(js|jsx|ts|tsx)\"",
+    "format:staged": "pretty-quick --staged",
+    "format:check": "prettylint \"src/**/*.{ts,tsx}\"",
     "prestart": "tsc",
-    "start": "node build/server.js"
+    "start": "node build/server.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage --forceExit",
+    "test:watch": "jest --watch",
+    "test:watch:coverage": "jest --watch --coverage --forceExit",
+    "test:watch:verbose": "jest --watch --verbose",
+    "test:coveralls": "cat coverage/lcov.info | node node_modules/.bin/coveralls"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0"
   }
 }
