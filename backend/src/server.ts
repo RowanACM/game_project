@@ -3,12 +3,12 @@ import { UserDBEntity } from './entities/UserDBEntity';
 import { Server, Socket } from 'socket.io';
 import { Express } from 'express';
 import 'reflect-metadata';
-import Client from "./Client";
+import Client from './Client';
+import * as socketIO from 'socket.io';
 
 const port = 3001;
 const express = require('express');
 const http = require('http');
-const socketIO = require('socket.io');
 
 const app: Express = express();
 const server = http.createServer(app);
@@ -22,7 +22,12 @@ const dbConnectionOptions: any = {
   logging: true,
 };
 
-const clients: any = [];
+const clients: { [key: string]: Client } = {};
+
+interface Coords {
+  x: number;
+  y: number;
+}
 
 createConnection(dbConnectionOptions).then(connection => {
   let n = 0;
@@ -31,20 +36,18 @@ createConnection(dbConnectionOptions).then(connection => {
     const c = n++;
     console.log(`new connection ${c}`);
     const client = new Client();
-    // @ts-ignore
-    clients[socket] = client;
+    clients[socket.id] = client;
 
     socket.on('disconnect', () => {
       console.log(`connection ${c} ended`);
-      // @ts-ignore
-      delete client[socket];
+      delete clients[socket.id];
     });
 
-    socket.on("move", (target: number[]) => {
-      console.log(target);
-      // TODO: Handle this
+    socket.on('move', (target: Coords) => {
+      const { x, y } = target;
+      console.log(`Moving to ${x}, ${y}`);
+      socket.broadcast.emit('move', target);
     });
-
   });
 
   server.listen(port, () => {

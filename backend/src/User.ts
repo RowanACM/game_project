@@ -19,9 +19,15 @@ export default class User {
 
   /** Adds a user to the database with the given password. */
   async addUser(password: string) {
-    const passwordHash = bcrypt.hashSync(password, SALT_ROUNDS);
-    const user = new UserDBEntity();
-    user.passwordHash = passwordHash;
-    await user.save();
+    let userCreated = false;
+    const existingUser = await UserDBEntity.findOne({ username: this.username });
+    if (!existingUser) {
+      const passwordHash = bcrypt.hashSync(password, SALT_ROUNDS);
+      const user = new UserDBEntity();
+      user.passwordHash = passwordHash;
+      await user.save();
+      userCreated = true;
+    }
+    return userCreated;
   }
 }

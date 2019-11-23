@@ -23,11 +23,23 @@ describe('Authentication', () => {
   describe('Adding and authenticating', () => {
     it('adds a user', async () => {
       const user = new User('foo');
-      await user.addUser('secret');
+      const userAdded = await user.addUser('secret');
+      expect(userAdded).toBeTruthy();
+
       expect(mockedUserDBEntity).toHaveBeenCalledTimes(1);
 
       const mockedUser: any = mockedUserDBEntity.mock.instances[0];
       expect(mockedUser.save).toHaveBeenCalled();
+    });
+
+    it('does NOT add a user (duplicate)', async () => {
+      // mock that a user already exists
+      mockedUserDBEntity.findOne = jest.fn().mockResolvedValue({ password: 'secret' });
+
+      const user = new User('foo');
+      const userAdded = await user.addUser('secret');
+      expect(userAdded).toBeFalsy();
+      expect(mockedUserDBEntity).not.toHaveBeenCalled();
     });
 
     it("checks a user's password", async () => {
