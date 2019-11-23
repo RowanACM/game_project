@@ -7,7 +7,7 @@ export default class PhaserGame extends React.Component {
     game: {
       width: 1920,
       height: 1080,
-      type: Phaser.CANVAS,
+      type: Phaser.AUTO,
       scene: {
         init: function() {
           this.cameras.main.setBackgroundColor('#24252A');
