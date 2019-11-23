@@ -1,5 +1,5 @@
 import App from 'next/app';
-
+import "../components/app.css"
 
 class defaultApp extends App {
   render() {

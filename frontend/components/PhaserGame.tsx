@@ -1,6 +1,7 @@
 import React from 'react';
 import Phaser from 'phaser';
 import { IonPhaser } from '@ion-phaser/react';
+import Overlay from "./Overlay";
 
 export default class PhaserGame extends React.Component {
   state = {
@@ -10,7 +11,7 @@ export default class PhaserGame extends React.Component {
       type: Phaser.AUTO,
       scene: {
         init: function() {
-          this.cameras.main.setBackgroundColor('#24252A');
+          this.cameras.main.setBackgroundColor('#373fff');
         },
         create: function() {
           this.helloWorld = this.add.text(this.cameras.main.centerX, this.cameras.main.centerY, 'hello from phaser', {
@@ -27,6 +28,14 @@ export default class PhaserGame extends React.Component {
   };
 
   render() {
-    return <IonPhaser game={this.state.game as any} />;
+    return (
+        <div id={"canvasContainer"}>
+          <div>
+            <IonPhaser game={this.state.game as any} />
+          </div>
+          <Overlay/>
+        </div>
+    );
   }
+
 }
