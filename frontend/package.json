@@ -18,6 +18,7 @@
     "test:coveralls": "cat coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "dependencies": {
+    "@ion-phaser/react": "^1.2.1",
     "@types/p5": "^0.9.0",
     "@types/socket.io-client": "^1.4.32",
     "@zeit/next-css": "^1.0.1",
@@ -34,11 +35,11 @@
     "next-progressbar": "^1.0.0",
     "node-sass": "^4.13.0",
     "npm-run-all": "^4.1.5",
+    "phaser": "^3.21.0",
     "react": "16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "16.12.0",
     "react-no-ssr": "^1.1.0",
-    "react-p5": "^1.1.8",
     "reactstrap": "^8.1.1",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0"
