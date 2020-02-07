@@ -24,6 +24,7 @@ export default class User {
     if (!existingUser) {
       const passwordHash = bcrypt.hashSync(password, SALT_ROUNDS);
       const user = new UserDBEntity();
+      user.username = this.username;
       user.passwordHash = passwordHash;
       await user.save();
       userCreated = true;
